@@ -10,28 +10,30 @@ knitr::opts_chunk$set(echo = TRUE)
 library(devtools)
 ```
 
-##Wstęp
+## Wstęp
 
 Pakiet został stworzony na zaliczenie ćwiczeń w ramach przedmiotu “Metody Inwentaryzacji i Szacowania Emisji”. Kod źródłowy został zaimplementowany w języku programowania R. Pakiet służy do wyznaczania emisji zanieczyszczeń wytwarzanych przez pojazdy z silnikami spalinowymi. Stworzone funkcje korzystają domyślnie z danych dołączonych do pakietu. Plik źródłowy z surowymi danymi został na początku przetworzony i zapisany do obiektu wskaźniki. 
 
-##Instalacja pakietu
+## Instalacja pakietu
 
-```{r,}
-install_github("weronix555/WWpack")
+```{r,echo=TRUE, message=FALSE, warning=FALSE}
+#devtools::install_github("weronix555/WWpack",force=TRUE)
 ```
 
-##Zastosowanie
+## Zastosowanie
+
 Dzięki pakietowi mamy możliwość natychmiastowego obliczenia emisji zanieczyszczeń wytwarzanych przez pojazdy z silnikami spalinowymi. Dodatkowo druga funkcja pakietu narysuje nam wykres rozrzutu natężenia do emisji wg.rodzaju zanieczyszczenia. Jedyne co trzeba zrobić to uruchomić funkcje w następujący sposób:
 
 
-```{r, echo=FALSE}
-WWemisja()
-WWplot()
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+#WWemisja()
+#WWplot()
 ```
 
-##Dokładny opis pakietu
+## Dokładny opis pakietu
 
 Innym sposobem poszerzenia wiedzy na temat możliwości pakietu jest zapoznania się z winietą, którą można uruchomić w programie RStudio za pomocą polecenia:
-```{r, echo=FALSE}
-browseVignettes("WWpack")
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+#browseVignettes("WWpack")
 ```
