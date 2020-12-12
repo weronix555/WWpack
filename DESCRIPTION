@@ -1,0 +1,29 @@
+Package: WWpack
+Type: Package
+Title: Szacowanie emisji z danych EEA.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Weronika",
+           family = "Wojtanek",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Wczytuje dane dotyczace wskaznikow emisji drogowej. 
+        Umozliwia szacowanie emisji wybranej substancji na podstawie wskaznikow. 
+        Pakiet tworzy wykres na podstawie obliczonych wartosci.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    magrittr,
+    tidyverse,
+    dplyr,
+    stats,
+    ggplot2,
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+

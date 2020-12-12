@@ -1,0 +1,87 @@
+---
+title: "my-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(WWpack)
+```
+
+**Weronika Wojtanek**
+**AGH, WGGiIŚ**
+**Geoinformacja, III rok**
+
+
+**e-mail:** *[wwojtanek@student.agh.edu.pl](wwojtanek@student.agh.edu.pl)*.
+
+***
+# Wstep
+***
+Pakiet został stworzony na zaliczenie ćwiczeń w ramach przedmiotu “Metody Inwentaryzacji i Szacowania Emisji”. Kod źródłowy został zaimplementowany w języku programowania R. Pakiet służy do wyznaczania emisji zanieczyszczeń wytwarzanych przez pojazdy z silnikami spalinowymi i wyświetlania wykresu rozrzutu natężenia do emisji wg.rodzaju zanieczyszczenia. 
+Winieta opisuje takie zagadnienia jak:
+-sposób instalacji pakietu,
+-format danych wejściowych,
+-funkcje pakietu
+
+***
+# Instalacja pakietu
+***
+
+Pakiet należy zainstalować w następujący sposób:
+
+```{r, eval=FALSE}
+install_git("https://github.com/iLucasCode/pakietemisja")
+```
+
+Pakiety, które należy załadować do prawidłowego działania pakietu:
+
+```{r, eval=FALSE}
+library(WWpack)
+```
+
+Ogólne informacje o pakiecie można wywołać w taki sposób:
+```{r, eval=FALSE}
+help(package = "WWpack")
+```
+
+Dane wejściowe
+
+Plik źródłowy z surowymi danymi został przetworzony i zapisany jako ramka danych wskaźniki. Obiekt ten pobiera się wraz z pakietem i służy on jako podstawowe dane do dalszej pracy. W ramce danych wskaźniki mamy zapisane dane do obliczenia emisji zanieczyszczeń z podziałem na różne kategorie pojazdów, rodzaj paliwa, technologię silnika, tryb jazdy, normę dopuszczalnej emisji spalin.
+Obiekt wskaźniki to dane wejściowe, które są argumentami funkcji obliczającej emisje zanieczyszczeń. Natomiast funkcja wyświetlająca wykres korzysta z utworzonych wyników obliczeń.
+
+Dokumentacje do danych pakietu można wywołać w następujący sposób:
+?wskaźniki
+
+
+Funkcje pakietu
+
+Funkcje pakietu posiadają dokumentację dostępną w systemie pomocy programu RStudio. W celu zapoznania się ze szczegółami zachęcam do jej przeglądnięcia po zainstalowania pakietu. Przykładowe wywołanie dokumentacji:
+
+- WWemisj()
+- WWplot()
+
+Funkcja WWemisj() służy do wyznaczania emisji zanieczyszczeń wytwarzanych przez pojazdy z silnikami spalinowymi. Emisje zanieczyszczeń zostały obliczone za pomocą następującego wzoru:
+Emisja=Nat * ((Alpha * Procent ^ 2 + Beta * Procent + Gamma + (Delta/Procent))(Epsilon * Procent ^ 2 + Zita * Procent + Hta) *(1-Reduction))
+
+Funkcje można uruchomić w taki sposób:
+```{r, eval=FALSE}
+WWemisja()
+```
+
+Funkcja WWplot() wyświetla wyniki WWemisja(). Rezultaty obliczeń są pokazane za pomocą wykresu rozrzutu natężenia do emisji według rodzaju zanieczyszczenia.
+
+Funkcje można uruchomić w następujący sposób:
+```{r, eval=FALSE}
+WWplot()
+```
